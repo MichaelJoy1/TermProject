@@ -1,0 +1,20 @@
+cd C:\Users\Michael_Joy\Desktop\advsoft
+
+f = open("sample_AAPL.txt", "r")
+listItems = f.read().splitlines()
+
+appleprices=listItems
+for i in range(0, len(listItems)):
+ appleprices[i] = float(listItems[i])
+
+import numpy as np
+
+data = appleprices
+
+mean = np.mean(data)
+
+print(mean)
+
+std_dev = np.std(data, ddof=251)
+
+print(std_dev)
