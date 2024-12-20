@@ -1,0 +1,17 @@
+cd C:\Users\Michael_Joy\Desktop\advsoft
+
+f = open("sample_AAPL.txt", "r")
+listItems = f.read().splitlines()
+
+appleprices=listItems
+for i in range(0, len(listItems)):
+ appleprices[i] = float(listItems[i])
+
+stock_price=appleprices
+
+for price in reversed(stock_price):
+ current_max_val = max(current_max_val, price)
+ potential_profit = current_max_val - price
+ max_profit_val = max(potential_profit, max_profit_val)
+
+print(max_profit_val)
